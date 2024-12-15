@@ -1,0 +1,81 @@
+10
+12345ABC
+Thay hoa vang tren co xanh
+Nguyen Nhat Anh
+NXB Kim Dong
+2020
+Romantic
+300
+100
+12346DEF
+Co gai den tu hom qua
+Nguyen Nhat Anh
+NXB Tre
+2000
+Romance
+220
+85
+12347GHI
+Cho toi xin mot ve tuoi tho
+Nguyen Nhat Anh
+NXB Kim Dong
+2008
+Fiction
+250
+90
+12348JKL
+Mot cuoc chia tay trong mua
+Nguyen Nhat Anh
+NXB Tre
+2015
+Romance
+270
+95
+12349MNO
+Bay troi ve ngang qua pho
+Nguyen Nhat Anh
+NXB Kim Dong
+2017
+Adventure
+300
+105
+12350PQR
+Doi cho em mot mua xuan
+Nguyen Nhat Anh
+NXB Tre
+2019
+Romance
+320
+100
+12351STU
+Ngay xua co mot chuyen tinh
+Nguyen Nhat Anh
+NXB Kim Dong
+2021
+Romance
+280
+110
+12352VWX
+Mot ngay nao do
+Nguyen Nhat Anh
+NXB Tre
+2013
+Drama
+240
+95
+12353YZA
+Kinh van hoa
+Nguyen Nhat Anh
+NXB Tre
+1995
+Fantasy
+150
+80
+12354BCD
+Nhung con meo cua nha van
+Nguyen Nhat Anh
+NXB Kim Dong
+2022
+Children
+200
+90
