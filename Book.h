@@ -7,6 +7,17 @@
 #define MAX_LOANS 100
 #define MAX_ISBN_PER_LOAN 10
 
+struct Book {
+    char ISBN[20];
+    char Title[50];
+    char Author[50];
+    char Publisher[50];
+    int PublishYear;
+    char Category[50];
+    float Price;
+    int Quantity;
+};
+
 void viewBooksList(char ISBN[MAX_BOOKS][20], char Titles[MAX_BOOKS][50], char Authors[MAX_BOOKS][50], char Publishers[MAX_BOOKS][50], int PublishYears[MAX_BOOKS], char bookCategories[MAX_BOOKS][50], float Prices[MAX_BOOKS], int Quantities[MAX_BOOKS], int bookCount);
 void addBook(int n, char ISBN[MAX_BOOKS][20], char Titles[MAX_BOOKS][50], char Authors[MAX_BOOKS][50], char Publishers[MAX_BOOKS][50], int PublishYears[MAX_BOOKS], char bookCategories[MAX_BOOKS][50], float Prices[MAX_BOOKS], int Quantities[MAX_BOOKS], int& bookCount);
 void editBook(char ISBN[MAX_BOOKS][20], char Titles[MAX_BOOKS][50], char Authors[MAX_BOOKS][50], char Publishers[MAX_BOOKS][50], int PublishYears[MAX_BOOKS], char bookCategories[MAX_BOOKS][50], float Prices[MAX_BOOKS], int Quantities[MAX_BOOKS], int bookCount);

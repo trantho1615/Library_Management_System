@@ -3,18 +3,44 @@
 // Quản lý độc giả
 #define MAX_READERS 100
 
-void viewReadersList(char readerIDs[MAX_READERS][20], char readerNames[MAX_READERS][50], char readerCMNDs[MAX_READERS][20], char readerBirthdays[MAX_READERS][20], char readerGenders[MAX_READERS][10], char readerEmails[MAX_READERS][50], char readerAddresses[MAX_READERS][100], char readerIssueDates[MAX_READERS][20], char readerExpiryDates[MAX_READERS][20], int readerCount);
-void addReader(int& n, char readerIDs[MAX_READERS][20], char readerNames[MAX_READERS][50], char readerCMNDs[MAX_READERS][20], char readerBirthdays[MAX_READERS][20], char readerGenders[MAX_READERS][10], char readerEmails[MAX_READERS][50], char readerAddresses[MAX_READERS][100], char readerIssueDates[MAX_READERS][20], char readerExpiryDates[MAX_READERS][20], int& readerCount);
-void editReader(char readerIDs[MAX_READERS][20], char readerNames[MAX_READERS][50], char readerCMNDs[MAX_READERS][20], char readerBirthdays[MAX_READERS][20], char readerGenders[MAX_READERS][10], char readerEmails[MAX_READERS][50], char readerAddresses[MAX_READERS][100], char readerIssueDates[MAX_READERS][20], char readerExpiryDates[MAX_READERS][20], int readerCount);
-void deleteReader(char readerIDs[MAX_READERS][20], char readerNames[MAX_READERS][50], char readerCMNDs[MAX_READERS][20], char readerBirthdays[MAX_READERS][20], char readerGenders[MAX_READERS][10], char readerEmails[MAX_READERS][50], char readerAddresses[MAX_READERS][100], char readerIssueDates[MAX_READERS][20], char readerExpiryDates[MAX_READERS][20], int& readerCount);
-void printReaderCatgorry();
-void printReaderInfo(int i, char readerIDs[MAX_READERS][20], char readerNames[MAX_READERS][50], char readerCMNDs[MAX_READERS][20], char readerBirthdays[MAX_READERS][20], char readerGenders[MAX_READERS][10], char readerEmails[MAX_READERS][50], char readerAddresses[MAX_READERS][100], char readerIssueDates[MAX_READERS][20], char readerExpiryDates[MAX_READERS][20]);
-int searchReaderByCMND(char cmnd[], char readerCMNDs[MAX_READERS][20], int readerCount);
-int searchReaderByID(char id[], char readerIDs[MAX_READERS][20], int readerCount);
-int searchReaderByName(char name[], char readerNames[MAX_READERS][50], int readerCount);
-int searchReaderByEmail(char email[], char readerEmails[MAX_READERS][50], int readerCount);
-int totalReaders(int readerCount);
-void readersByGender(char readerGenders[MAX_READERS][10], int readerCount);
+struct Reader{
+    char ID[20];
+    char Name[50];
+    char CMND[20];
+    char Birthday[20];
+    char Gender[10];
+    char Email[50];
+    char Address[100];
+    char IssueDate[20];
+    char ExpiryDate[20];
+};
 
-// void readReader(const char* fileName, char readerIDs[MAX_READERS][20], char readerNames[MAX_READERS][50], char readerCMNDs[MAX_READERS][20], char readerBirthdays[MAX_READERS][20], char readerGenders[MAX_READERS][10], char readerEmails[MAX_READERS][50], char readerAddresses[MAX_READERS][100], char readerIssueDates[MAX_READERS][20], char readerExpiryDates[MAX_READERS][20], int& readerCount);
-// void writeReader(const char* fileName, char readerIDs[MAX_READERS][20], char readerNames[MAX_READERS][50], char readerCMNDs[MAX_READERS][20], char readerBirthdays[MAX_READERS][20], char readerGenders[MAX_READERS][10], char readerEmails[MAX_READERS][50], char readerAddresses[MAX_READERS][100], char readerIssueDates[MAX_READERS][20], char readerExpiryDates[MAX_READERS][20], int readerCount);
+void viewReadersList(Reader readers[MAX_READERS], int readerCount);
+void addReader(int& n, Reader readers[MAX_READERS], int& readerCount);
+void editReader(Reader readers[MAX_READERS], int readerCount);
+void deleteReader(Reader readers[MAX_READERS], int& readerCount);
+void printReaderCategory();
+void printReaderInfo(int i, Reader readers[MAX_READERS]);
+int searchReaderByCMND(char cmnd[], Reader readers[MAX_READERS], int readerCount);
+int searchReaderByID(char id[], Reader readers[MAX_READERS], int readerCount);
+int searchReaderByName(char name[], Reader readers[MAX_READERS], int readerCount);
+int searchReaderByEmail(char email[], Reader readers[MAX_READERS], int readerCount);
+int totalReaders(int readerCount);
+void readersByGender(Reader readers[MAX_READERS], int readerCount);
+
+
+void viewReadersList(Reader readers[MAX_READERS], int readerCount);
+void addReader(int& n, Reader readers[MAX_READERS], int& readerCount);
+void editReader(Reader readers[MAX_READERS], int readerCount);
+void deleteReader(Reader readers[MAX_READERS], int& readerCount);
+void printReaderCatgorry();
+void printReaderInfo(int i, Reader readers[MAX_READERS]);
+int searchReaderByCMND(char cmnd[], Reader readers[MAX_READERS], int readerCount);
+int searchReaderByID(char id[], Reader readers[MAX_READERS], int readerCount);
+int searchReaderByName(char name[], Reader readers[MAX_READERS], int readerCount);
+int searchReaderByEmail(char email[], Reader readers[MAX_READERS], int readerCount);
+int totalReaders(int readerCount);
+void readersByGender(Reader readers[MAX_READERS], int readerCount);
+
+void readReader(const char* fileName, Reader readers[MAX_READERS], int& readerCount);
+void writeReader(const char* fileName, Reader readers[MAX_READERS], int readerCount);
