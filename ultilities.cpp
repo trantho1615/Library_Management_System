@@ -162,8 +162,8 @@ bool isArrayEmpty(char strings[][20], int n) {
         }
     }
     return true;
-}
 
+}
 //Xử lí xóa kí tự xuống dòng
 void endlineHandler(char* str) {
     if (str[strlen(str) - 1] == '\n') {
