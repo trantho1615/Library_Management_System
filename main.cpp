@@ -18,9 +18,9 @@ int main() {
         {"23127273", "Le Van I", "058205001189", "29/09/1985", "Male", "levanI@gmail.com", "99/01 Phan Van Tri, Q.9, TP.HCM", "30/12/2019", ""}
     };
     int readerCount = 10;
-    // for(int i = 0; i < readerCount; i++) {
-    //     addMonthsToDate(readers[i].IssueDate, 48, readers[i].ExpiryDate);
-    // }
+    for(int i = 0; i < readerCount; i++) {
+        addMonthsToDate(readers[i].IssueDate, 48, readers[i].ExpiryDate);
+    }
 
     //Quản lí sách
     Book books[MAX_BOOKS] = {
