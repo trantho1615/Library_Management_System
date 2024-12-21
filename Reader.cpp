@@ -5,6 +5,7 @@
 
 //Xem danh sách độc giả, chú ý maximize màn hình console để được aligment đẹp
 void viewReadersList(Reader readers[MAX_READERS], int readerCount) {
+    if(readerCount == 0){cout << "Empy reader list\n"; return;}
     printReaderCatgorry();
     for (int i = 0; i < readerCount; i++) {
         printf("%-5d %-10s %-20s %-15s %-12s %-10s %-12s %-12s %-20s %-20s\n",
@@ -312,9 +313,9 @@ void readReader(const char* fileName, Reader readers[MAX_READERS], int& readerCo
        endlineHandler(fgets(readers[readerCount].CMND, sizeof(readers[readerCount].CMND), f));
        endlineHandler(fgets(readers[readerCount].Birthday, sizeof(readers[readerCount].Birthday), f));
        endlineHandler(fgets(readers[readerCount].Gender, sizeof(readers[readerCount].Gender), f));
-       endlineHandler(fgets(readers[readerCount].IssueDate, sizeof(readers[readerCount].IssueDate), f));
-       endlineHandler(fgets(readers[readerCount].ExpiryDate, sizeof(readers[readerCount].ExpiryDate), f));
        endlineHandler(fgets(readers[readerCount].Email, sizeof(readers[readerCount].Email), f));
+       endlineHandler(fgets(readers[readerCount].Address, sizeof(readers[readerCount].Address), f));
+       endlineHandler(fgets(readers[readerCount].IssueDate, sizeof(readers[readerCount].IssueDate), f));
        strcpy(readers[readerCount].ExpiryDate, readers[readerCount].IssueDate);
        addMonthsToDate(readers[readerCount].IssueDate, 48, readers[readerCount].ExpiryDate);
        readerCount++;
@@ -325,7 +326,7 @@ void readReader(const char* fileName, Reader readers[MAX_READERS], int& readerCo
 
 void writeReader(const char* fileName, Reader readers[MAX_READERS], int readerCount)
 {
-   FILE* f = fopen(fileName, "w");
+   FILE* f = fopen(fileName, "a");
    if (f == NULL) {
        printf("Cannot open file %s\n", fileName);
        return;

@@ -5,6 +5,7 @@
 
 //Hiển thị danh sách sách
 void viewBooksList(Book books[MAX_BOOKS], int bookCount) {
+    if(bookCount == 0) {cout << "Empty book list\n"; return;}
     printf("List of Books:\n");
     printf("%-5s %-10s %-28s %-18s %-18s %-8s %-10s %-10s %-10s\n",
         "STT", "ISBN", "Title", "Author", "Publisher", "Year", "Category", "Price", "Quantity");
@@ -448,12 +449,12 @@ void readBook(const char *fileName, Book books[MAX_BOOKS], int& bookCount)
        fscanf(f, "%d\n", &books[bookCount].Quantity);
        bookCount++;
    }
-   printf("Read books successfully.\n");
+   printf("Book added successfully.\n");
    fclose(f);
 }
 void writeBook(const char* fileName, Book books[MAX_BOOKS], int bookCount)
 {
-   FILE* f = fopen(fileName, "w");
+   FILE* f = fopen(fileName, "a");
    if (f == NULL) {
        printf("Cannot open file %s\n", fileName);
        return;

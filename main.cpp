@@ -5,72 +5,41 @@
 
 int main() {
     // Quản lý độc giả
-    // char readerIDs[MAX_READERS][20] = {"23127264", "23127265", "23127266", "23127267", "23127268", "23127269", "23127270", "23127271", "23127272", "23127273"};
-    // char readerNames[MAX_READERS][50] = {"Tran Tho", "Ngo Thi Nhu Quynh", "Tran Thi B", "Le Van C", "Pham Thi D", "Hoang Van E", "Vu Thi F", "Nguyen Van G", "Tran Thi H", "Le Van I"};
-    // char readerCMNDs[MAX_READERS][20] = {"058205001180", "058205001181", "058205001182", "058205001183", "058205001184", "058205001185", "058205001186", "058205001187", "058205001188", "058205001189"};
-    // char readerBirthdays[MAX_READERS][20] = {"16/01/2005", "16/05/2005", "12/12/1998", "01/04/2000", "30/07/1992", "18/03/1999", "10/10/1994", "05/06/2001", "15/11/1990", "29/09/1985"};
-    // char readerGenders[MAX_READERS][10] = {"Male", "Male", "Female", "Male", "Female", "Male", "Female", "Male", "Female", "Male"};
-    // char readerEmails[MAX_READERS][50] = {"tholazdo@gmail.com", "ngvanA@gmail.com", "tranthiB@gmail.com", "levanc@gmail.com", "phamthiD@gmail.com", "hoangvanE@gmail.com", "vuthif@gmail.com", "ngvanG@gmail.com", "tranthiH@gmail.com", "levanI@gmail.com"};
-    // char readerAddresses[MAX_READERS][100] = {"21/21 Tu Lap, P4, Q.Tan Binh, TP.HCM", "12/34 Nguyen Trai, Q.1, TP.HCM", "45/67 Le Lai, Q.3, TP.HCM", "89/10 Tran Hung Dao, Q.5, TP.HCM", "33/12 Le Duan, Q.10, TP.HCM", "21/23 Nguyen Van Cu, Q.7, TP.HCM", "56/78 Truong Chinh, Q.12, TP.HCM", "22/44 Ly Thuong Kiet, Q.4, TP.HCM", "77/88 Hoang Sa, Q.2, TP.HCM", "99/01 Phan Van Tri, Q.9, TP.HCM"};
-    // char readerIssueDates[MAX_READERS][20] = {"23/06/2019", "10/10/2020", "05/11/2021", "20/02/2022", "15/01/2023", "11/12/2023", "19/05/2022", "08/08/2021", "01/01/2020", "30/12/2019"};
-    // char readerExpiryDates[MAX_READERS][20] = {""};
-    // int readerCount = 10;
+    Reader readers[MAX_READERS];
+    // = {
+    //     {"23127264", "Tran Tho", "058205001180", "16/01/2005", "Male", "tholazdo@gmail.com", "21/21 Tu Lap, P4, Q.Tan Binh, TP.HCM", "23/06/2019", ""},
+    //     {"23127265", "Ngo Thi Nhu Quynh", "058205001181", "16/05/2005", "Male", "ngvanA@gmail.com", "12/34 Nguyen Trai, Q.1, TP.HCM", "10/10/2020", ""},
+    //     {"23127266", "Tran Thi B", "058205001182", "12/12/1998", "Female", "tranthiB@gmail.com", "45/67 Le Lai, Q.3, TP.HCM", "05/11/2021", ""},
+    //     {"23127267", "Le Van C", "058205001183", "01/04/2000", "Male", "levanc@gmail.com", "89/10 Tran Hung Dao, Q.5, TP.HCM", "20/02/2022", ""},
+    //     {"23127268", "Pham Thi D", "058205001184", "30/07/1992", "Female", "phamthiD@gmail.com", "33/12 Le Duan, Q.10, TP.HCM", "15/01/2023", ""},
+    //     {"23127269", "Hoang Van E", "058205001185", "18/03/1999", "Male", "hoangvanE@gmail.com", "21/23 Nguyen Van Cu, Q.7, TP.HCM", "11/12/2023", ""},
+    //     {"23127270", "Vu Thi F", "058205001186", "10/10/1994", "Female", "vuthif@gmail.com", "56/78 Truong Chinh, Q.12, TP.HCM", "19/05/2022", ""},
+    //     {"23127271", "Nguyen Van G", "058205001187", "05/06/2001", "Male", "ngvanG@gmail.com", "22/44 Ly Thuong Kiet, Q.4, TP.HCM", "08/08/2021", ""},
+    //     {"23127272", "Tran Thi H", "058205001188", "15/11/1990", "Female", "tranthiH@gmail.com", "77/88 Hoang Sa, Q.2, TP.HCM", "01/01/2020", ""},
+    //     {"23127273", "Le Van I", "058205001189", "29/09/1985", "Male", "levanI@gmail.com", "99/01 Phan Van Tri, Q.9, TP.HCM", "30/12/2019", ""}
+    // };
+    int readerCount = 0;
     // for(int i = 0; i < readerCount; i++) {
-        // addMonthsToDate(readerIssueDates[i], 48, readerExpiryDates[i]);
+    //     addMonthsToDate(readers[i].IssueDate, 48, readers[i].ExpiryDate);
     // }
 
-    Reader readers[MAX_READERS] = {
-        {"23127264", "Tran Tho", "058205001180", "16/01/2005", "Male", "tholazdo@gmail.com", "21/21 Tu Lap, P4, Q.Tan Binh, TP.HCM", "23/06/2019", ""},
-        {"23127265", "Ngo Thi Nhu Quynh", "058205001181", "16/05/2005", "Male", "ngvanA@gmail.com", "12/34 Nguyen Trai, Q.1, TP.HCM", "10/10/2020", ""},
-        {"23127266", "Tran Thi B", "058205001182", "12/12/1998", "Female", "tranthiB@gmail.com", "45/67 Le Lai, Q.3, TP.HCM", "05/11/2021", ""},
-        {"23127267", "Le Van C", "058205001183", "01/04/2000", "Male", "levanc@gmail.com", "89/10 Tran Hung Dao, Q.5, TP.HCM", "20/02/2022", ""},
-        {"23127268", "Pham Thi D", "058205001184", "30/07/1992", "Female", "phamthiD@gmail.com", "33/12 Le Duan, Q.10, TP.HCM", "15/01/2023", ""},
-        {"23127269", "Hoang Van E", "058205001185", "18/03/1999", "Male", "hoangvanE@gmail.com", "21/23 Nguyen Van Cu, Q.7, TP.HCM", "11/12/2023", ""},
-        {"23127270", "Vu Thi F", "058205001186", "10/10/1994", "Female", "vuthif@gmail.com", "56/78 Truong Chinh, Q.12, TP.HCM", "19/05/2022", ""},
-        {"23127271", "Nguyen Van G", "058205001187", "05/06/2001", "Male", "ngvanG@gmail.com", "22/44 Ly Thuong Kiet, Q.4, TP.HCM", "08/08/2021", ""},
-        {"23127272", "Tran Thi H", "058205001188", "15/11/1990", "Female", "tranthiH@gmail.com", "77/88 Hoang Sa, Q.2, TP.HCM", "01/01/2020", ""},
-        {"23127273", "Le Van I", "058205001189", "29/09/1985", "Male", "levanI@gmail.com", "99/01 Phan Van Tri, Q.9, TP.HCM", "30/12/2019", ""}
-    };
-    int readerCount = 10;
-    for(int i = 0; i < readerCount; i++) {
-        addMonthsToDate(readers[i].IssueDate, 48, readers[i].ExpiryDate);
-    }
-
-    //Sách
-    // char ISBN[MAX_BOOKS][20] = {"12345ABC", "12346DEF", "12347GHI", "12348JKL", "12349MNO", "12350PQR", "12351STU", "12352VWX", "12353YZA", "12354BCD"};
-    // char Titles[MAX_BOOKS][50] = {"Thay hoa vang tren co xanh", "Co gai den tu hom qua", "Cho toi xin mot ve tuoi tho", "Mot cuoc chia tay trong mua", "Bay troi ve ngang qua pho", "Doi cho em mot mua xuan", "Ngay xua co mot chuyen tinh", "Mot ngay nao do", "Kinh van hoa", "Nhung con meo cua nha van"};
-    // char Authors[MAX_BOOKS][50] = {"Nguyen Nhat Anh", "Nguyen Nhat Anh", "Nguyen Nhat Anh", "Nguyen Nhat Anh", "Nguyen Nhat Anh", "Nguyen Nhat Anh", "Nguyen Nhat Anh", "Nguyen Nhat Anh", "Nguyen Nhat Anh", "Nguyen Nhat Anh"};
-    // char Publishers[MAX_BOOKS][50] = {"NXB Kim Dong", "NXB Tre", "NXB Kim Dong", "NXB Tre", "NXB Kim Dong", "NXB Tre", "NXB Kim Dong", "NXB Tre", "NXB Tre", "NXB Kim Dong"};
-    // int PublishYears[MAX_BOOKS] = {2020, 2000, 2008, 2015, 2017, 2019, 2021, 2013, 1995, 2022};
-    // char bookCategories[MAX_BOOKS][50] = {"Romantic", "Romance", "Fiction", "Romance", "Adventure", "Romance", "Romance", "Drama", "Fantasy", "Children"};
-    // float Prices[MAX_BOOKS] = {300, 220, 250, 270, 300, 320, 280, 240, 150, 200};
-    // int Quantities[MAX_BOOKS] = {100, 85, 90, 95, 105, 100, 110, 95, 80, 90};
-    // int bookCount = 10;
-
-    Book books[MAX_BOOKS] = {
-        {"12345ABC", "Thay hoa vang tren co xanh", "Nguyen Nhat Anh", "NXB Kim Dong", 2020, "Romantic", 300, 100},
-        {"12346DEF", "Co gai den tu hom qua", "Nguyen Nhat Anh", "NXB Tre", 2000, "Romance", 220, 85},
-        {"12347GHI", "Cho toi xin mot ve tuoi tho", "Nguyen Nhat Anh", "NXB Kim Dong", 2008, "Fiction", 250, 90},
-        {"12348JKL", "Mot cuoc chia tay trong mua", "Nguyen Nhat Anh", "NXB Tre", 2015, "Romance", 270, 95},
-        {"12349MNO", "Bay troi ve ngang qua pho", "Nguyen Nhat Anh", "NXB Kim Dong", 2017, "Adventure", 300, 105},
-        {"12350PQR", "Doi cho em mot mua xuan", "Nguyen Nhat Anh", "NXB Tre", 2019, "Romance", 320, 100},
-        {"12351STU", "Ngay xua co mot chuyen tinh", "Nguyen Nhat Anh", "NXB Kim Dong", 2021, "Romance", 280, 110},
-        {"12352VWX", "Mot ngay nao do", "Nguyen Nhat Anh", "NXB Tre", 2013, "Drama", 240, 95},
-        {"12353YZA", "Kinh van hoa", "Nguyen Nhat Anh", "NXB Tre", 1995, "Fantasy", 150, 80},
-        {"12354BCD", "Nhung con meo cua nha van", "Nguyen Nhat Anh", "NXB Kim Dong", 2022, "Children", 200, 90}
-    };
-    int bookCount = 10;
+    //Quản lí sách
+    Book books[MAX_BOOKS];
+    // = {
+    //     {"12345ABC", "Thay hoa vang tren co xanh", "Nguyen Nhat Anh", "NXB Kim Dong", 2020, "Romantic", 300, 100},
+    //     {"12346DEF", "Co gai den tu hom qua", "Nguyen Nhat Anh", "NXB Tre", 2000, "Romance", 220, 85},
+    //     {"12347GHI", "Cho toi xin mot ve tuoi tho", "Nguyen Nhat Anh", "NXB Kim Dong", 2008, "Fiction", 250, 90},
+    //     {"12348JKL", "Mot cuoc chia tay trong mua", "Nguyen Nhat Anh", "NXB Tre", 2015, "Romance", 270, 95},
+    //     {"12349MNO", "Bay troi ve ngang qua pho", "Nguyen Nhat Anh", "NXB Kim Dong", 2017, "Adventure", 300, 105},
+    //     {"12350PQR", "Doi cho em mot mua xuan", "Nguyen Nhat Anh", "NXB Tre", 2019, "Romance", 320, 100},
+    //     {"12351STU", "Ngay xua co mot chuyen tinh", "Nguyen Nhat Anh", "NXB Kim Dong", 2021, "Romance", 280, 110},
+    //     {"12352VWX", "Mot ngay nao do", "Nguyen Nhat Anh", "NXB Tre", 2013, "Drama", 240, 95},
+    //     {"12353YZA", "Kinh van hoa", "Nguyen Nhat Anh", "NXB Tre", 1995, "Fantasy", 150, 80},
+    //     {"12354BCD", "Nhung con meo cua nha van", "Nguyen Nhat Anh", "NXB Kim Dong", 2022, "Children", 200, 90}
+    // };
+    int bookCount = 0;
 
     // Phiếu mượn/trả sách
-    // char loanReaderIDs[MAX_LOANS][20];
-    // char loanReaderNames[MAX_LOANS][50];
-    // char loanIssueDates[MAX_LOANS][20]; //Ngày mượn
-    // char loanDueDates[MAX_LOANS][20];   //Ngày trả dự kiến (sau 7 ngày), hay hạn trả
-    // char loanReturnDates[MAX_LOANS][20] = {""};//Ngày trả thực tế
-    // char loanISBN[MAX_LOANS][MAX_ISBN_PER_LOAN][20]; //Danh sách ISBN sách của mỗi đọc giả
-    // char loanBookTitle[MAX_LOANS][MAX_ISBN_PER_LOAN][50]; //Danh sách tên sách mượn của mỗi đọc giả
-    // int loanBookCounts[MAX_LOANS] = {0}; //Số lượng sách mượn của mỗi đọc giả
-    // int loanCount = 0;  //Số lượng đọc giả mượn sách
     Loan loans[MAX_LOANS];
     for (int i = 0; i < MAX_LOANS; i++) {
         strcpy(loans[i].ReturnDate, "");
@@ -80,6 +49,8 @@ int main() {
     }
     int loanCount = 0;
 
+
+    //Menu
     int choice;
     while (1) {
         printf("\nLibrary Management System\n");
@@ -113,14 +84,34 @@ int main() {
         }
         case 2:
         {
-            //Add Reader from console
-            int n;
-            addReader(n, readers, readerCount);
+            printf("1. Add Reader from console\n");
+            printf("2. Add Reader from file\n");
+            printf("Your choice: ");
+            int choice;
+            scanf("%d", &choice);
+            switch(choice)
+            {
+                case 1:
+                {
+                    //Add Reader from console
+                    int n;
+                    addReader(n, readers, readerCount);
+                    break;
+                }
+                case 2:
+                {
+                    //Add Reader from file
+                    readReader("inputReaders.txt", readers, readerCount);
+                    writeReader("outputReaders.txt", readers, readerCount);
+                    break;
+                }
+                default:
+                {
+                    printf("Invalid choice.\n");
+                    break;
+                }
+            }
             break;
-            //Add Reader from file
-            // readReader("inputReaders.txt", readerIDs, readerNames, readerCMNDs, readerBirthdays, readerGenders, readerEmails, readerAddresses, readerIssueDates, readerExpiryDates, readerCount);
-            // writeReader("outputReaders.txt", readerIDs, readerNames, readerCMNDs, readerBirthdays, readerGenders, readerEmails, readerAddresses, readerIssueDates, readerExpiryDates, readerCount);
-            // break;
         }
         case 3:
         {
@@ -172,16 +163,36 @@ int main() {
         }
         case 8:
         {
-            //Add Book from console
-            int n;
-            printf("Enter number of books to add: ");
-            scanf("%d", &n);
-            addBook(n, books, bookCount);
+            printf("1. Add Book from console\n");
+            printf("2. Add Book from file\n");
+            printf("Your choice: ");
+            int choice;
+            scanf("%d", &choice);
+            switch(choice)
+            {
+                case 1:
+                {
+                    //Add Book from console
+                    int n;
+                    printf("Enter number of books to add: ");
+                    scanf("%d", &n);
+                    addBook(n, books, bookCount);
+                    break;
+                }
+                case 2:
+                {
+                    //Add Book from file
+                    readBook("inputBooks.txt", books, bookCount);
+                    writeBook("outputBooks.txt", books, bookCount);
+                    break;
+                }
+                default:
+                {
+                    printf("Invalid choice.\n");
+                    break;
+                }
+            }
             break;
-            //Add Book from file
-            // readBook("inputBooks.txt", ISBN, Titles, Authors, Publishers, PublishYears, bookCategories, Prices, Quantities, bookCount);
-            // writeBook("outputBooks.txt", ISBN, Titles, Authors, Publishers, PublishYears, bookCategories, Prices, Quantities, bookCount);
-            // break;
         }
         case 9:
         {   editBook(books, bookCount);
